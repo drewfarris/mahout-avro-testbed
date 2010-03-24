@@ -1,0 +1,19 @@
+{ "type": "record", 
+  "name": "AvroDocument", 
+  "namespace": "org.apache.mahout.avro",
+  "fields" : [
+    {"name": "docid", "type": ["null", "int", "string"]},
+    {"name": "fields", "type": {
+     "type": "array", "items":
+          {
+            "type": "record",
+            "name": "AvroField",
+            "fields": [
+              {"name": "name", "type": "string"},
+              {"name": "originalText", "type": ["null", "string"]},
+              {"name": "value", "type": ["null", "int", "long", "double", "string", {"type": "array", "items": ["int", "long", "double", "string"]}]}
+            ]
+          }
+    }}
+  ]
+}
